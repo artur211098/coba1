@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Produk dengan Profil</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #d9e2ec);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #3b5998;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .link-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: calc(33.333% - 20px);
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .link-card a {
+            color: #3b5998;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .link-card a:hover {
+            color: #1d72b8;
+        }
+        .link-card p {
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .link-card {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .link-card {
+                width: 100%;
+            }
+        }
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #3b5998;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-align: center;
+            font-size: 24px;
+        }
+        .floating-icon:hover {
+            background-color: #1d72b8;
+        }
+        .profile-info {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            padding: 10px;
+            z-index: 10;
+        }
+        .profile-info h3 {
+            margin-top: 0;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard Produk</h1>
+    </header>
+    <div class="container">
+        <div class="links">
+            <div class="link-card">
+                <a href="https://example.com/produk1" target="_blank">Produk 1</a>
+                <p>Deskripsi singkat produk 1 yang menarik dan informatif.</p>
+            </div>
+            <div class="link-card">
+                <a href="https://example.com/produk2" target="_blank">Produk 2</a>
+                <p>Deskripsi singkat produk 2 yang menggugah minat.</p>
+            </div>
+            <div class="link-card">
+                <a href="https://example.com/produk3" target="_blank">Produk 3</a>
+                <p>Deskripsi singkat produk 3 yang bermanfaat.</p>
+            </div>
+            <!-- Tambahkan lebih banyak kartu produk di sini -->
+        </div>
+    </div>
+    <div class="floating-icon" onclick="toggleProfileInfo()">P</div>
+    <div class="profile-info" id="profile-info">
+        <h3>Alawiyah</h3>
+        <p><strong>Brand:</strong> Starup International Brand</p>
+        <p><strong>Alamat:</strong> Jl. Contoh No. 123, Kota, Negara</p>
+    </div>
+    <script>
+        function toggleProfileInfo() {
+            const profileInfo = document.getElementById('profile-info');
+            profileInfo.style.display = profileInfo.style.display === 'none' || profileInfo.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
